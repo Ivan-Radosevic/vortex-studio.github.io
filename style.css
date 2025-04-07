@@ -2,12 +2,12 @@ body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
 }
-
 .navbar {
     background-color: #435db1;
     overflow: hidden;
     padding: 10px 0;
     text-align: right;
+    position: relative; /* So the hamburger can be positioned */
 }
 
 .navbar ul {
@@ -17,7 +17,7 @@ body {
 }
 
 .navbar ul li {
-    display: inline;
+    display: inline-block; /* Change from 'inline' to 'inline-block' for better control */
     margin: 0 15px;
 }
 
@@ -27,11 +27,49 @@ body {
     font-size: 18px;
     padding: 10px 20px;
     transition: background 0.3s;
+    display: block; /* Helps make clickable area bigger on mobile */
 }
 
 .navbar ul li a:hover {
     background-color: #575757;
     border-radius: 5px;
+}
+.hamburger {/* Hamburger Button (Hidden by Default) */
+    display: none;
+    font-size: 30px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+}
+/* 🎯 Responsive behavior for small screens */
+@media (max-width: 768px) {
+    .navbar {
+        text-align: center; /* Center the menu items */
+    }
+    .navbar ul {
+        display: none; /* Hide menu initially */
+        flex-direction: column;
+        align-items: center;
+        background-color: #435db1;
+        width: 100%;
+    }
+    .navbar ul.show {
+        display: flex; /* Show menu when active */
+    }
+    .navbar ul li {
+        margin: 10px 0; /* Space between menu items */
+    }
+    .navbar ul li a {
+        font-size: 20px; /* Slightly bigger text for easier tapping */
+        padding: 10px;
+    }
+    .hamburger {
+        display: block; /* Show hamburger on mobile */
+    }
 }
 
 h1 {
@@ -73,7 +111,7 @@ img {
 }
 
 ul {
-    list-style-type: square;
+    list-style-type: disc;
 }
 
 .small-img {
@@ -116,39 +154,107 @@ hr:nth-of-type(2){
     height: auto;
 }
 
-.image-whatFor {
-    float: right;
-    margin-right: 15px;
+.container {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+}
+.image-novo {
     width: 600px;
     height: auto;
+    flex-shrink: 0; /* Prevent image from shrinking */
 }
-
+.image-novo2 {
+    width: 400px;
+    height: auto;
+    flex-shrink: 0; /* Prevent image from shrinking */
+}
+.image-novo3 {
+    width: 300px;
+    height: auto;
+    flex-shrink: 0; /* Prevent image from shrinking */
+}
+.text-novo {
+    flex: 1;
+    list-style-position: inside;
+    text-align: left;
+    list-style-position: outside; /* Bullets outside text block */
+    padding-left: 20px;            /* Small padding so bullets don't stick to left edge */
+}
+.image-vert {
+    display: flex;
+    flex-direction: column; /* Stack images vertically */
+    gap: 15px; /* Space between images */
+    flex-shrink: 0; /* Prevent shrinking */
+}
+.image-hor {
+    display: flex;
+    flex-direction: row; /* horizontalno */
+    gap: 15px; /* Space between images */
+    flex-shrink: 0; /* Prevent shrinking */
+}
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    gap: 15px; /* Space between images */
+    flex-shrink: 0;
+}
 .image-CAD {
-    float: left;
-    margin-right: 30px;
-    width: 660px;
+    width: 400px;
     height: auto;
+    flex-shrink: 0; /* Prevent image from shrinking */
 }
-
 .image-mesher {
-    float: left;
-    margin-right: 80px;
-    width: 200px;
+    width: 400px;
     height: auto;
+    flex-shrink: 0; /* Prevent image from shrinking */
 }
 
 .image-simple {
-    float: left;
-    margin-right: 5px;
-    width: 300px;
+    width: 400px;
     height: auto;
+    flex-shrink: 0; /* Prevent image from shrinking */
 }
 
 .image-about {
-    float: left;
-    margin-right: 30px;
-    width: 240px;
+    width: 400px;
     height: auto;
+    flex-shrink: 0; /* Prevent image from shrinking */
+}
+/* Responsive behavior */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Stack vertically */
+        align-items: center; /* Center the items */
+        text-align: center; /* Optional: center text on mobile */
+    }
+    .image-novo {
+        width: 100%; /* Full width image on small screens */
+        max-width: 400px; /* Optional: limit max size */
+    }
+    .image-novo2 {
+        width: 100%; /* Full width image on small screens */
+        max-width: 400px; /* Optional: limit max size */
+    }
+    .image-novo3 {
+        width: 100%; /* Full width image on small screens */
+        max-width: 300px; /* Optional: limit max size */
+    }
+    .image-vert {
+        flex-direction: column;
+        align-items: center;
+    }
+    .image-hor {
+        flex-direction: row;
+        align-items: center;
+    }
+    .image-grid {
+        grid-template-columns: 1fr; /* Stack images 1 by 1 on small screens */
+    }
+    .text-novo {
+        text-align: left; /* Keep text aligned left if you prefer */
+    }
 }
 
 /* Three image containers (use 25% for four, and 50% for two, etc) */
@@ -163,4 +269,18 @@ hr:nth-of-type(2){
     content: "";
     clear: both;
     display: table;
+  }
+
+  .email-link {
+    cursor: pointer;
+    color: blue;
+    text-decoration: underline;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .email-link img {
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
   }
