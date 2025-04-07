@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
     <title>Vortex Tools</title>
 </head>
 
@@ -11,7 +12,7 @@
     <nav class="navbar">
        <!-- Hamburger Button -->
     <button class="hamburger" onclick="toggleMenu()">☰</button>
-    <ul id="nav-links">
+    <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="features.html">Features</a></li>
       <li><a href="about.html">About</a></li>
@@ -54,11 +55,17 @@
         </div>
       </div>
       <hr>
-      <script>
+      <!--script>
         function toggleMenu() {
             var navLinks = document.getElementById("nav-links");
             navLinks.classList.toggle("show");
         }
-        </script>
+        </script-->
+        <script>
+          function toggleMenu() {
+              const navLinks = document.querySelector('.nav-links');
+              navLinks.classList.toggle('active');
+          }
+          </script>
 </body>
 </html>

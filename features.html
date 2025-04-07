@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
     <title>Features</title>
 </head>
 <body>
     <nav class="navbar">
            <!-- Hamburger Button -->
     <button class="hamburger" onclick="toggleMenu()">☰</button>
-        <ul id="nav-links">
+        <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="features.html">Features</a></li>
             <li><a href="about.html">About</a></li>
@@ -73,26 +74,10 @@
         <hr>
     </div>
 
-    <!--div class="chapter" id="future">
-        <h2>Future improvements</h2>
-        <div class="container">
-            <p>
-                <ul>
-                    <li>User-friendly and intuitive GUI interface</li>
-                    <li>Importing and meshing standard format CAD files</li>
-                    <li>Modeling of control surfaces and thrust components such as propellers and jet intakes/nozzles</li> 
-                    <li>Boundary layer modeling for advanced calculation of friction drag and flow separation</li>
-                    <li>Expanding the scope of utilization to include transonic and supersonic flows</li>
-                </ul>
-            </p>
-        </div>
-        <hr>
-        <a href="#top">Top</a>
-    </div-->
     <script>
         function toggleMenu() {
-            var navLinks = document.getElementById("nav-links");
-            navLinks.classList.toggle("show");
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
         }
         </script>
 </body>
