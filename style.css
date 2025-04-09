@@ -1,7 +1,75 @@
+.hero {
+    padding: 5px 5px;
+    background: white;
+    text-align: center;
+  }
+  .hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap; /* important for mobile! */
+    gap: 10px;
+  }
+  .hero-text {
+    max-width: 500px;
+  }
+  .hero-text h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+    color: #435db1;
+  }
+  .hero-text h2 {
+    font-size: 24px;
+    margin-bottom: 5px;
+    color: #333;
+  }
+  .hero-text h3 {
+    font-size: 20px;
+    color: #555;
+  }
+  .hero-image {
+    width: 340px;
+    height: auto;
+  }
+  .hero-image.left {
+    order: -1; /* left image first */
+  }
+  .hero-image.right {
+    order: 1; /* right image after text */
+  }
+  /* Responsive tweaks */
+  @media (max-width: 768px) {
+    .hero-content {
+      flex-direction: column;
+    }
+    .hero-image {
+      width: 300px;
+      margin: 10px 0;
+    }
+    .hero-text h1 {
+      font-size: 36px;
+    }
+    .hero-text h2 {
+      font-size: 20px;
+    }
+    .hero-text h3 {
+      font-size: 18px;
+    }
+  }
+
 body {
     /*font-family: Arial, sans-serif;*/
     font-family: 'Lato', sans-serif;
     line-height: 1.6;
+}
+h1 {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+}
+h2 {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1em;
 }
 .navbar {
     background-color: #435db1;
@@ -117,15 +185,6 @@ body {
     }
 }
 
-h1 {
-    text-align: center;
-    font-family: 'Montserrat', sans-serif;
-}
-h2 {
-    text-align: center;
-    font-family: 'Montserrat', sans-serif;
-}
-
 nav img {
     width: 100px;
     height: auto;
@@ -228,6 +287,7 @@ hr:nth-of-type(2){
     text-align: left;
     list-style-position: outside; /* Bullets outside text block */
     padding-left: 20px;            /* Small padding so bullets don't stick to left edge */
+    margin-top: 1em;
 }
 .image-vert {
     display: flex;
