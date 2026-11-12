@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <title>Features</title>
+</head>
+<body>
+    <nav class="navbar">
+           <!-- Hamburger Button -->
+    <button class="hamburger" onclick="toggleMenu()">☰</button>
+        <ul class="nav-links">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="features.html">Features</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <!--hr style="margin: 20px 20px;"-->
+
+    <div class="chapter" id="chapter3">
+        <h2>Generiranje mreže</h2>
+        <div class="container">
+            <ul class="text-novo">
+                <li>Mesher generira zatvorenu vodonepropusnu trokutastu mrežu, na kojoj se mogu primjeniti razni tipovi panelnih elemenata</li>
+                <li>Geometrija zrakoplova se definira parametarski u samom programu, bez uporabe vanjskih CAD programa</li>
+                <li>Objekti klase "trup" definiraju se standardnim postupkom <i>conic lofting</i>, a objekti klase "krilo" definiraju se ekstruzijom profila koji se učitavaju izvana kao popis točaka</li>
+                <li>Inicijalno, svaki pojedini objekt je definiran kao zatvorena trokutasta mreža</li>
+                <li>Nakon toga, pokretanjem meshiranja svaka dva objekta koji se međusobno presjecaju budu zakrpani zajedno tako da čine jednu zatvorenu mrežu</li>
+                <li>Proces spajanja se automatski ponavlja sve dok ne preostane jedna zatvorena mreža koja obuhvaća sve definirane objekte</li>
+                <li>Na ovaj način moguće je definirati razne složene geometrije, spremne za primjenu panelnih metoda, jednostavnije nego primjenom općenamjenskih komercijalnih CAD programa</li>
+            </ul>
+            <img src="CAD_workflow.png" class="image-novo2">
+            <!--img src="Screenshot 2025-03-07 105752.png" class="image-novo">
+            <img src="Screenshot 2025-03-07 111903.png" class="image-novo">
+            <img src="Screenshot 2025-03-07 113726.png" class="image-novo"-->
+            <!--div class="image-grid">
+                <img src="Screenshot 2025-03-07 105752.png" class="image-novo3">
+                <img src="Screenshot 2025-03-07 111903.png" class="image-novo3">
+                <img src="Screenshot 2025-03-07 113726.png" class="image-novo3">
+            </div-->
+            <div class="clearfix"></div>
+        </div>
+            <div class="image-grid">
+                <img src="Screenshot 2025-03-07 111903.png" class="image-novo">
+                <img src="Screenshot 2025-03-07 113726.png" class="image-novo">
+                <img src="Screenshot 2025-03-07 105752.png" class="image-novo">
+            </div>
+        <hr>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        }
+        </script>
+</body>
+</html>
